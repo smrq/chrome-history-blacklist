@@ -1,0 +1,32 @@
+<svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <style type="text/css">
+.hour, .minute, .second, .second-extra {
+	transform-origin: 96px 96px;
+}
+.hour {
+	transform: rotate(135deg);
+}
+.minute {
+	transform: rotate(45deg);
+}
+.second {
+	transform: rotate(225deg);
+}
+.second-extra {
+	transform: rotate(315deg);
+}
+  </style>
+	<rect x="0" y="0" width="192" height="192" rx="24" fill="#401614" />
+	<g>
+		<rect x="84" y="24" height="72" width="24" rx="4" fill="#802c29" class="second-extra" />
+		<rect x="84" y="24" height="72" width="24" rx="4" fill="#802c29" class="second" />
+		<rect x="84" y="24" height="72" width="24" rx="4" fill="#e64f49" class="hour" />
+		<rect x="84" y="24" height="84" width="24" rx="4" fill="#ff5752" class="minute" />
+ 	</g>
+	<g>
+		<rect x="12" y="93" width="24" height="6" fill="#ff5752" />
+		<rect x="156" y="93" width="24" height="6" fill="#ff5752" />
+		<rect x="93" y="156" width="6" height="24" fill="#ff5752" />
+		<rect x="93" y="12" width="6" height="24" fill="#ff5752" />
+	</g>
+</svg>

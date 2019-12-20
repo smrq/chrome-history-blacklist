@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>History Blacklist</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito|Fira+Mono|Titillium+Web:700&display=swap" rel="stylesheet">
+	<style>
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+	font-size: 1rem;
+	color: #0D1B1E;
+    background: #ffeecf;
+	font-family: 'Nunito', sans-serif;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.container {
+	max-width: 540px;
+	margin: 0 auto;
+	padding: 0 16px;
+}
+
+main, footer {
+	overflow: auto;
+}
+
+main {
+	flex: 1;
+}
+
+footer {
+	background: #0D1B1E;
+	color: white;
+}
+
+h1 {
+	font-family: 'Titillium Web', sans-serif;
+	color: #2f100f;
+	display: flex;
+	align-items: center;
+	font-size: 3rem;
+}
+
+textarea {
+	margin: 0;
+	font-family: 'Fira Mono', monospace;
+	display: block;
+	width: 100%;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: inherit;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #3f1614;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	overflow: auto;
+	resize: none;
+	min-height: 12rem;
+}
+
+button {
+    background-color: #45062E;
+    border-color: #45062E;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    color: #ffffffcc;
+    cursor: pointer;
+    display: inline-block;
+	font-family: 'Titillium Web', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+button:hover {
+	background-color: #7F055F;
+	color: #ffffff;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	opacity: 0.7;
+	transition: opacity 200ms ease, color 200ms ease;
+}
+
+a:hover {
+	opacity: 1;
+	color: #ff5752;
+}
+
+.logo {
+	width: 64px;
+	height: 64px;
+	margin-right: 1.25rem;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 2rem 0;
+}
+
+#urls-purged-container {
+	display: none;
+}
+
+#urls-purged-container.show {
+	display: block;
+}
+
+#urls-purged,
+#urls-purged-date {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: bold;
+}
+
+#saved-notification {
+	margin: 0 1rem;
+    font-size: 1rem;
+    opacity: 0;
+    user-select: none;
+    transition: opacity 4s ease;
+}
+
+#saved-notification.flash {
+	opacity: 1;
+	transition: none;
+}
+
+.heart {
+	color: #ff5752;
+}
+
+	</style>
+</head>
+<body>
+	<div class="content">
+		<main>
+			<div class="container">
+				<h1>
+					<img class="logo" src="logo-animated.svg" />
+					History Blacklist
+				</h1>
+				<p id="urls-purged-container">
+					<span id="urls-purged"></span> history items have been blocked since <span id="urls-purged-date"></span>.
+				</p>
+				<p>
+					Add one entry per row.  Any URL that matches any entry will be prevented from entering your browser history.
+				</p>
+				<div class="row">
+					<textarea id="blacklist"></textarea>
+				</div>
+				<div class="row">
+					<button id="save">Save</button>
+					<span id="saved-notification">Saved!</span>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="container">
+				<p>Made with <span class="heart">&#x2764;</span> by <a href="https://github.com/smrq" target="_blank">Greg Smith (@smrq)</a></p>
+			</div>
+		</footer>
+	</div>
+	<script src="options.js"></script>
+</body>
+</html>
