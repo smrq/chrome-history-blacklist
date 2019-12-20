@@ -1,11 +1,8 @@
 {
+	"manifest_version": 2,
 	"name": "History Blacklist",
-	"version": "1.0",
+	"version": "1.0.0",
 	"description": "Blacklists URLs from entering Chrome's history.",
-	"background": {
-		"scripts": ["background.js"],
-		"persistent": false
-	},
 	"icons": {
 		"16": "images/icon-16px.png",
 		"32": "images/icon-32px.png",
@@ -14,7 +11,12 @@
 		"128": "images/icon-128px.png",
 		"192": "images/icon-192px.png"
 	},
+	"author": "Greg Smith <smr.kyu@gmail.com>",
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"homepage_url": "https://github.com/smrq/chrome-history-blacklist",
 	"options_page": "options.html",
-	"permissions": ["activeTab", "declarativeContent", "history", "storage"],
-	"manifest_version": 2
+	"permissions": ["history", "storage"]
 }
