@@ -3,7 +3,7 @@ chrome.history.onVisited.addListener(handleHistoryVisited);
 
 function handleRuntimeInstalled() {
 	chrome.storage.sync.set({
-		blacklist: ['example.com'],
+		blacklist: [],
 		urlsPurged: 0,
 		startDate: Date.now()
 	}, () => {
