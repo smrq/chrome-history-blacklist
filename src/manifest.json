@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "History Blacklist",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Blacklists URLs from entering Chrome's history.",
 	"icons": {
 		"16": "images/icon-16px.png",
