@@ -1,14 +1,16 @@
 chrome.runtime.onInstalled.addListener(handleRuntimeInstalled);
 chrome.history.onVisited.addListener(handleHistoryVisited);
 
-function handleRuntimeInstalled() {
-	chrome.storage.sync.set({
-		blacklist: [],
-		urlsPurged: 0,
-		startDate: Date.now()
-	}, () => {
-		console.log('Blacklist initialized.');
-	});
+function handleRuntimeInstalled(details) {
+	if (details.reason === 'install') {
+		chrome.storage.sync.set({
+			blacklist: [],
+			urlsPurged: 0,
+			startDate: Date.now()
+		}, () => {
+			console.log('Blacklist initialized.');
+		});
+	}
 }
 
 function handleHistoryVisited(historyItem) {
