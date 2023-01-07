@@ -17,7 +17,7 @@ function handleHistoryVisited(historyItem) {
 	chrome.storage.sync.get('blacklist', data => {
 		if (isBlacklisted(data.blacklist, historyItem.url)) {
 			console.log(`Blacklisted URL: ${historyItem.url}`);
-			purgeUrl(historyItem.url);
+			purgeUrl(historyItem.url, historyItem.title);
 		}
 	});
 }
@@ -37,6 +37,6 @@ function incrementCount() {
 	});
 }
 
-function isBlacklisted(blacklist, url) {
-	return blacklist.some(line => url.toLowerCase().includes(line.toLowerCase()));
+function isBlacklisted(blacklist, url, title) {
+	return blacklist.some(line => url.toLowerCase().includes(line.toLowerCase())) || blacklist.some(line => title.toLowerCase().includes(line.toLowerCase()));
 }
