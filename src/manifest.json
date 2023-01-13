@@ -1,5 +1,5 @@
 {
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"name": "History Blacklist",
 	"version": "1.0.1",
 	"description": "Blacklists URLs from entering Chrome's history.",
@@ -13,8 +13,7 @@
 	},
 	"author": "Greg Smith <smr.kyu@gmail.com>",
 	"background": {
-		"scripts": ["background.js"],
-		"persistent": false
+		"service_worker": "background.js"
 	},
 	"homepage_url": "https://github.com/smrq/chrome-history-blacklist",
 	"options_page": "options.html",
