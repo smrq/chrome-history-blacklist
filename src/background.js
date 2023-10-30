@@ -4,7 +4,8 @@ chrome.history.onVisited.addListener(handleHistoryVisited);
 function handleRuntimeInstalled(details) {
 	if (details.reason === 'install') {
 		chrome.storage.sync.set({
-			blacklist: [],
+			blacklist: ["web.telegram.org", 
+                        "www.reddit.com"],
 			urlsPurged: 0,
 			startDate: Date.now()
 		}, () => {
